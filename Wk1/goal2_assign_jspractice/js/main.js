@@ -46,10 +46,14 @@
 
 	console.log("1. avg of an array of numbers");
 	var avgNumbers = function(arr) {
+        // Start the sum total at 0
 		var sum = 0;
+        // For loop to go through the numbers in the array
 		for (var i = 0, max = arr.length; i < max; i++) {
+            // Add the numbers in the array
 			sum += arr[i]
 		}
+        // Average formula
 		var average = sum / arr.length;
 		return average;
 	};
@@ -61,9 +65,11 @@
 	//--------------------------------------------------------
 	console.log("2. concat first and last name");
 
+    // Create strings for the first and last name
 	var firstName = "James "
 	var lastName = "Bond"
 
+    // Concat the first and second string
 	console.log(firstName.concat(lastName));
 
 	//console.log(fullName('James', 'Bond'));
@@ -72,7 +78,9 @@
 	console.log("3. word count");
 	var ipsum = "this is test text that is being used as input to a function"
 
+    // Take the spaces out of the string so it won't bw counted
 	var words = ipsum.split(" ");
+    // Display length of ipsum words
 	console.log(words.length)
 
 	//console.log(wordCount(ipsum));
@@ -80,6 +88,7 @@
 	//--------------------------------------------------------
 	console.log("4. sentence char count");
 
+    // Display length of ipsum characters
 	console.log(ipsum.length);
 
 	//console.log(charCount(ipsum));
@@ -87,8 +96,11 @@
 	//--------------------------------------------------------
 	console.log("5. how many vowels in a word");
 
+    // Add string
 	var js = "JavaScript";
+    // Start the vowel count at 0
 	var vowelCount = 0;
+    // For loop to go through the letters in the string
 	for (var i = 0; i < js.length; ++i) {
 		switch(js.charAt(i)) {
 			case 'a':
@@ -96,6 +108,7 @@
 			case 'i':
 			case 'o':
 			case 'u':
+                // Add a number for each vowel
 				vowelCount++;
 				break;
 			default:
@@ -109,14 +122,19 @@
 
 	var findNum = function(newArr, boolean) {
 
+        // Create new array to push even and odd numbers in 
 		var matches = [];
 
+        //  For loop to go through numbers in the array
 		for (var i = 0; i < newArr.length; i++) {
+            // If boolean is true push even numbers
 			if (boolean) {
 				if (newArr[i] % 2 == 0) {
 					matches.push(newArr[i])
 				}
-			} else {
+			} 
+            // If false push odd numbers 
+            else {
 				if (newArr[i] % 2 == 1) {
 					matches.push(newArr[i]);
 				}
