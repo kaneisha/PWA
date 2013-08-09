@@ -58,64 +58,87 @@
 		return average;
 	};
 
-	//console.log(average);
 
 	console.log('avg number = ', avgNumbers([1, 2, 3, 4, 5]));
 
 	//--------------------------------------------------------
 	console.log("2. concat first and last name");
 
-    // Create strings for the first and last name
-	var firstName = "James "
-	var lastName = "Bond"
+    var fullName = function(name){
+        // Create strings for the first and last name
+        var firstName = "James"
+        var lastName = "Bond"
 
-    // Concat the first and second string
-	console.log(firstName.concat(lastName));
+        // Concat the first and second string
+        var wholeName = firstName.concat(lastName);
+        return wholeName;
+    };
 
-	//console.log(fullName('James', 'Bond'));
+    
+
+	console.log(fullName('James', 'Bond'));
 
 	//--------------------------------------------------------
 	console.log("3. word count");
 	var ipsum = "this is test text that is being used as input to a function"
 
-    // Take the spaces out of the string so it won't bw counted
-	var words = ipsum.split(" ");
-    // Display length of ipsum words
-	console.log(words.length)
+    var wordCount = function(phrase){
+        // Take the spaces out of the string so it won't bw counted
+        var words = ipsum.split(" ");
+        var numberOfWords = words.length
+        return numberOfWords;
+    }
 
-	//console.log(wordCount(ipsum));
+	console.log(wordCount(ipsum));
 
 	//--------------------------------------------------------
 	console.log("4. sentence char count");
 
-    // Display length of ipsum characters
-	console.log(ipsum.length);
+    var charCount = function(phrase2){
+        // Display length of ipsum characters
+        //console.log(ipsum.length);
+        var count = ipsum.length;
+        return count;
+    }
+    
 
-	//console.log(charCount(ipsum));
+	console.log(charCount(ipsum));
 
 	//--------------------------------------------------------
 	console.log("5. how many vowels in a word");
 
-    // Add string
-	var js = "JavaScript";
-    // Start the vowel count at 0
-	var vowelCount = 0;
-    // For loop to go through the letters in the string
-	for (var i = 0; i < js.length; ++i) {
-		switch(js.charAt(i)) {
-			case 'a':
-			case 'e':
-			case 'i':
-			case 'o':
-			case 'u':
-                // Add a number for each vowel
-				vowelCount++;
-				break;
-			default:
-			// do nothing
-		}
-	}
-	console.log(vowelCount);
+    var vowelsInWord = function(word){
+
+        // Start the vowel count at 0
+        var vowelCount = 0;
+        // For loop to go through the letters in the string
+        for (var i = 0; i < word.length; ++i) {
+            switch(word.charAt(i)) {
+                //Search for the vowels
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                    // Add a number for each vowel
+                    vowelCount++;
+                    break;
+                default:
+                // do nothing
+            }
+        }
+
+        return vowelCount;
+
+    }
+
+    
+	console.log(vowelsInWord("JavaScript"));
 
 	//--------------------------------------------------------
 	console.log("6. find number and create an array of even or odd numbers");
