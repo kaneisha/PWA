@@ -1,48 +1,41 @@
 /*
 Name: Kaneisha Whipple
-Date: 8/06/2013
-Assignment: Goal1: Assignment: Duel1
+Date: 8/08/2013
+Assignment: Goal2: Assignment: Duel2
 */
 
 // self-executing function
 (function(){
 	console.log("FIGHT!!!");
 
-	//assign player name
-	var player1Name = "Spiderman";
-	var player2Name = "Batman";
 
-	//assign the amount of damage each player gets per hit
-	var player1Damage = 20;
-	var player2Damage = 20;
-
-	//assign player starting health
-	var player1Health = 100;
-	var player2Health = 100;
+	//Assign player name, health and damage
+	var fighter1 = ["Spiderman", 20, 100]
+	var fighter2 = ["Batman", 20, 100]
 
 	//initiate the round
 	var round = 0;
 
 	function fight(){
 		//When the game starts this will pop up letting the player know the health and the round
-		alert(player1Name+":"+player1Health+" *START* "+player2Name+":"+player2Health);
+		alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
 	
 		console.log("in the fight function");
 
 		// Loops through rounds 10 times or until there is a winner
 		for (var i = 0; i < 10; i++) {
 			//assign minimum amount of damage each player gets by multiplying the playerdamage by .5
-			var minDamage1 = player1Damage * .5;
-			var minDamage2 = player2Damage * .5;
+			var minDamage1 = (fighter1[1] * .5);
+			var minDamage2 = (fighter2[1] * .5);
 
 			//Choose a random number between "playerDamage & minimumDamage using the math.random formula
-			var f1 = Math.floor(Math.random()*(player1Damage - minDamage1) + minDamage1);
-			var f2 = Math.floor(Math.random()*(player2Damage - minDamage2) + minDamage2);
+			var f1 = Math.floor(Math.random()*(fighter1[1] - minDamage1) + minDamage1);
+			var f2 = Math.floor(Math.random()*(fighter2[1] - minDamage2) + minDamage2);
 
 
 			//inflict damage by setting the player health to equal the new damage and decrease it with each round
-			player1Health -= f1;
-			player2Health -= f2;
+			fighter1[2] -= f1;
+			fighter2[2] -= f2;
 
 			//console.log(player1Name+":"+player1Health+ "" +player2Name+":"+player2Health);
 
@@ -54,7 +47,7 @@ Assignment: Goal1: Assignment: Duel1
 			// if there is a winner show the results of the game 
 			if(results === "no winner"){
 				round++;
-				alert(player1Name+":"+player1Health+" *ROUND "+round+" OVER* "+player2Name+":"+player2Health);
+				alert(fighter1[0]+":"+fighter1[2]+" *ROUND "+round+" OVER* "+fighter2[0]+":"+fighter2[2]);
 			}else{
 				alert(results);
 				break;
@@ -69,12 +62,12 @@ Assignment: Goal1: Assignment: Duel1
 
 		// Winner stats
 		// If both players health is less than 1 they both lose if not whoever's health is under 1 first loses
-		if(player1Health < 1 && player2Health < 1){
+		if(fighter1[2] < 1 && fighter2[2] < 1){
 			result = "You Both Die"
-		}else if(player1Health < 1){
-			result = player2Name + " WINS!!!"
-		}else if(player2Health < 1){
-			result = player1Name + " WINS!!!"
+		}else if(fighter1[2] < 1){
+			result = fighter2[0] + " WINS!!!"
+		}else if(fighter2[2] < 1){
+			result = fighter1[0] + " WINS!!!"
 		};
 
 		return result;
