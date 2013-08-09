@@ -55,31 +55,50 @@
     //--------------------------------------------------------
     console.log("2. concat first and last name");
 
-        //PUT FUNCTION HERE
+        var firstName = "James "
+        var lastName = "Bond"
 
-    console.log(fullName('James', 'Bond'));
+        console.log(firstName.concat(lastName));
+
+
+    //console.log(fullName('James', 'Bond'));
 
     //--------------------------------------------------------
     console.log("3. word count");
     var ipsum = "this is test text that is being used as input to a function"
 
-        //PUT FUNCTION HERE
+        var words = ipsum.split(" ");
+        console.log(words.length)
 
-    console.log(wordCount(ipsum));
+    //console.log(wordCount(ipsum));
 
     //--------------------------------------------------------
     console.log("4. sentence char count");
 
-        //PUT FUNCTION HERE
+        console.log(ipsum.length);
 
-    console.log(charCount(ipsum));
+    //console.log(charCount(ipsum));
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
 
-        //PUT FUNCTION HERE
-
-    console.log(vowelsInWord('JavaScript'));
+        var js = "JavaScript";
+        var vowelCount = 0;
+            for (var i = 0; i < js.length; ++i) {
+                switch(js.charAt(i)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+            vowelCount++;
+            break;
+            default:
+            // do nothing
+        }
+    }
+    console.log(vowelCount);
+    
 
     //--------------------------------------------------------
     console.log("6. find number and create an array of even or odd numbers");
