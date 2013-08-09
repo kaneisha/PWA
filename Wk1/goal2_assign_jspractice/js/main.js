@@ -85,6 +85,8 @@
     var wordCount = function(phrase){
         // Take the spaces out of the string so it won't bw counted
         var words = ipsum.split(" ");
+
+        //Count the number of words in the string
         var numberOfWords = words.length
         return numberOfWords;
     }
@@ -96,7 +98,6 @@
 
     var charCount = function(phrase2){
         // Display length of ipsum characters
-        //console.log(ipsum.length);
         var count = ipsum.length;
         return count;
     }
