@@ -46,9 +46,17 @@
 
     console.log("1. avg of an array of numbers");
     var avgNumbers = function(arr){
-
-        //CODE GOES HERE
+        var sum = 0;
+        for(var i=0, max=arr.length; i < max; i++){
+            sum += arr[i]
+        }
+        var average = sum/arr.length;
+        return average;
     };
+
+        
+
+        //console.log(average);
 
     console.log('avg number = ', avgNumbers([1,2,3,4,5]));
 
