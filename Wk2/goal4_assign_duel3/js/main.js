@@ -66,15 +66,18 @@ Assignment: Goal4: Assignment: Duel3
 
 				}else{
 					document.querySelector('#scores').innerHTML = results;
+					//document.querySelector('#round').innerHTML = results;
 					//e.preventDefault();
 
-					document.querySelector('.buttonblue').disabled = true;
 					gameOver = true;
 
 
 				}
 
-				document.querySelector('#round').innerHTML = results;
+				document.querySelector('#round').innerHTML = 'Round: ' + round;
+				if(gameOver === true){
+					document.querySelector('#round').innerHTML = results;
+				}
 
 			};
 		}
